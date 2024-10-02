@@ -4,21 +4,27 @@ using namespace std;
 int main() {
     int t;
     cin >> t;
+    cin.ignore();
 
-    for (int c = 1; c <= t; c++) {
+    for (int i = 1; i <= t; i++) {
+        string s;
+        getline(cin, s);
+
         int n;
         cin >> n;
+        vector<int> d(n);
+        int sum = 0;
 
-        int d = 0;
-        for (int i = 0; i < n; i++) {
-            int x;
-            cin >> x;
-            if (x > 0) {
-                d += x;
+        for (int j = 0; j < n; ++j) {
+            cin >> d[j];
+            if (d[j] > 0) {
+                sum += d[j];
             }
         }
 
-        cout << "Case " << c << ": " << d << endl;
+        cout << "Case " << i << ": " << sum << endl;
     }
+
+    return 0;
 }
 
