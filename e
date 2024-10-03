@@ -9,3 +9,10 @@ int main() {
     return 0;
 }
 
+
+
+//python
+
+n, m = map(int, input().split())
+r = ((m + 1) * n + (n + 1) * m) // 2
+print(r)
