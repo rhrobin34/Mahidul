@@ -1,18 +1,30 @@
-n = int(input())
-m = input()
+#include <bits/stdc++.h>
+using namespace std;
 
-s = 0
-f = 0
+int main() {
+    int n;
+    cin >> n;
+    string m;
+    cin >> m;
 
-for i in range(n - 1):
-    if (m[i] == ':' and m[i + 1] == ')') or (m[i] == '(' and m[i + 1] == ':'):
-        s += 1
-    elif (m[i] == ':' and m[i + 1] == '(') or (m[i] == ')' and m[i + 1] == ':'):
-        f += 1
+    int s = 0, f = 0;
 
-if s > f:
-    print("HAPPY")
-elif s < f:
-    print("SAD")
-else:
-    print("BORED")
+    for (int i = 0; i < n - 1; ++i) {
+        if ((m[i] == ':' && m[i + 1] == ')') || (m[i] == '(' && m[i + 1] == ':')) {
+            s++;
+        } else if ((m[i] == ':' && m[i + 1] == '(') || (m[i] == ')' && m[i + 1] == ':')) {
+            f++;
+        }
+    }
+
+    if (s > f) {
+        cout << "HAPPY" << endl;
+    } else if (s < f) {
+        cout << "SAD" << endl;
+    } else {
+        cout << "BORED" << endl;
+    }
+
+    return 0;
+}
+
